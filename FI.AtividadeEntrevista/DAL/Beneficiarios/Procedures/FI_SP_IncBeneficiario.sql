@@ -1,0 +1,18 @@
+﻿CREATE PROC FI_SP_IncBeneficiario
+    @NOME          VARCHAR (50),    
+    @CPF           VARCHAR (14),
+    @IDCLIENTE BIGINT,
+    @CEP           VARCHAR (9),
+    @ESTADO        VARCHAR (2),
+    @CIDADE        VARCHAR (50),
+    @LOGRADOURO    VARCHAR (500),
+    @EMAIL         VARCHAR (2079),
+    @TELEFONE      VARCHAR (15)
+    
+AS
+BEGIN
+	INSERT INTO BENEFICIARIOS (NOME, CPF, IDCLIENTE) 
+	VALUES (@NOME,@CPF,@IDCLIENTE)
+
+	SELECT SCOPE_IDENTITY()
+END
